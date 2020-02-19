@@ -1,0 +1,61 @@
+<launch>
+	<!--include file="$(find realsense2_camera)/launch/rs_rgbd.launch">
+
+  <arg name="fisheye_width"       default="640"/>
+  <arg name="fisheye_height"      default="480"/>
+  <arg name="enable_fisheye"      default="false"/>
+
+  <arg name="depth_width"         default="640"/>
+  <arg name="depth_height"        default="480"/>
+  <arg name="enable_depth"        default="true"/>
+
+  <arg name="infra_width"         default="640"/>
+  <arg name="infra_height"        default="480"/>
+  <arg name="enable_infra1"       default="false"/>
+  <arg name="enable_infra2"       default="false"/>
+
+
+  <arg name="color_width"         default="640"/>
+  <arg name="color_height"        default="480"/>
+  <arg name="enable_color"        default="true"/>
+  
+
+
+  	</include-->
+<!--><node name="dsme_camera" pkg="location_finder" type="camera_info_pub.py" /> -->
+
+
+	<include file="$(find realsense2_camera)/launch/rs_rgbd.launch">
+
+  <arg name="fisheye_width"       default="640"/>
+  <arg name="fisheye_height"      default="480"/>
+  <arg name="enable_fisheye"      default="false"/>
+
+  <arg name="depth_width"         default="640"/>
+  <arg name="depth_height"        default="480"/>
+  <arg name="enable_depth"        default="true"/>
+
+  <arg name="infra_width"         default="640"/>
+  <arg name="infra_height"        default="480"/>
+  <arg name="enable_infra1"       default="false"/>
+  <arg name="enable_infra2"       default="false"/>
+
+
+  <arg name="color_width"         default="640"/>
+  <arg name="color_height"        default="480"/>
+  <arg name="enable_color"        default="true"/>
+
+
+
+  	</include>
+
+
+  	<include file ="$(find aruco_detect)/launch/aruco_detect.launch">
+  		<arg name="camera" default="/camera/color"/> <!-- which mode of camera is used-->
+  		<arg name="image" default="image_raw"/>
+  		<arg name="fiducial_len" default="0.144"/>  <!-- this is the size/dimension of the marker -->
+  	</include>
+
+
+
+</launch>

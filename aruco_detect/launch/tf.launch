@@ -1,0 +1,19 @@
+<launch>
+
+
+
+<node name="world_tf" pkg="aruco_detect" type="ex_sub.py" respawn="false" output="screen">
+
+</node>
+
+
+<node name="bot_1_tf" pkg="aruco_detect" type="bot_1.py" />
+
+<node name="bot_2_tf" pkg="aruco_detect" type="bot_2.py" />
+
+<node type="rviz" name="rviz" pkg="rviz" args="-d $(find aruco_detect)/rviz/ex.rviz" output="screen"/>
+
+<!-- Run map -->
+
+
+</launch>
